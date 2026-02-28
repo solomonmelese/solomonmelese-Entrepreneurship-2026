@@ -19,11 +19,13 @@ section { padding:20px 0; border-bottom:1px solid #ddd; }
 section:last-child { border-bottom:none; }
 h2 { color:#0073e6; border-left: 5px solid #0073e6; padding-left: 10px; }
 .test-container { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
-.question { font-weight: bold; margin-top: 15px; display: block; }
+.question-block { margin-bottom: 20px; padding: 10px; border-radius: 5px; }
+.question { font-weight: bold; display: block; margin-bottom: 8px; }
 .options { margin-bottom: 10px; }
+.feedback { font-size: 0.9em; margin-top: 5px; font-weight: bold; display: none; }
 button { margin-top:10px; padding:10px 20px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; font-size: 16px; }
 button:hover { background:#005bb5; }
-.result { font-weight: bold; margin-top: 10px; color: #d9534f; }
+.score-display { font-size: 1.2em; font-weight: bold; margin-top: 15px; padding: 10px; background: #e7f3ff; border-radius: 5px; display: none; }
 footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
 </style>
 </head>
@@ -49,7 +51,7 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 <section id="description">
     <h2>Course Description</h2>
     <p>
-        Entrepreneurship aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics. [cite: 546]
+        Entrepreneurship aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics.
     </p>
 </section>
 
@@ -58,166 +60,232 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
     <ul class="resources">
         <li><a href="modules/Entrepreneurship_Module.pdf" target="_blank">Full Module (PDF)</a></li>
         <li><a href="modules/Chapter1_Entrepreneurship.pptx" target="_blank">Chapter 1: The Nature of Entrepreneurship</a></li>
-        </ul>
+        <li><a href="modules/Chapter2_BusinessPlanning.pptx" target="_blank">Chapter 2: Business Planning</a></li>
+        <li><a href="modules/Chapter3_BusinessFormation.pptx" target="_blank">Chapter 3: Business Formation</a></li>
+        <li><a href="modules/Chapter4_ProductDevelopment.pptx" target="_blank">Chapter 4: Product/Service Development</a></li>
+        <li><a href="modules/Chapter5_Marketing.pptx" target="_blank">Chapter 5: Marketing</a></li>
+        <li><a href="modules/Chapter6_Financing.pptx" target="_blank">Chapter 6: Business Financing</a></li>
+        <li><a href="modules/Chapter7_ManagingGrowth.pptx" target="_blank">Chapter 7: Managing Growth and Transition</a></li>
+    </ul>
 </section>
 
 <section id="self-check">
     <h2>Self-Check Tests</h2>
     
-    <div class="test-container" id="test1">
-        <h3>Chapter 1: Self-Check Test 1 (Fundamentals)</h3>
-        <form id="form1">
-            <span class="question">1. The word 'entrepreneur' originates from which French word? [cite: 500]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q1" value="a"> Entreprender</label><br>
-                <label><input type="radio" name="t1q1" value="b"> Entreprise</label><br>
-                <label><input type="radio" name="t1q1" value="c"> Entrepreneurship</label>
+    <div class="test-container" id="test1Container">
+        <h3>Chapter 1: Self-Check Test 1</h3>
+        <form id="test1">
+            <div class="question-block" data-q="1">
+                <span class="question">1. The word 'entrepreneur' originates from which French word?</span>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> Entreprender</label><br>
+                    <label><input type="radio" name="q1" value="b"> Entreprise</label><br>
+                    <label><input type="radio" name="q1" value="c"> Entrepreneurship</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">2. Who developed the first theory of the entrepreneur as a "risk taker" in the 18th Century? [cite: 523, 524]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q2" value="a"> Joseph Schumpeter</label><br>
-                <label><input type="radio" name="t1q2" value="b"> Richard Cantillon</label><br>
-                <label><input type="radio" name="t1q2" value="c"> Jane Jacobs</label>
+            <div class="question-block" data-q="2">
+                <span class="question">2. Who is credited with the 18th-century view of the entrepreneur as a risk-taker?</span>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> Joseph Schumpeter</label><br>
+                    <label><input type="radio" name="q2" value="b"> Richard Cantillon</label><br>
+                    <label><input type="radio" name="q2" value="c"> Adam Smith</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">3. According to the text, entrepreneurship is the ______ and the entrepreneur is the ______. [cite: 567]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q3" value="a"> Person; Process</label><br>
-                <label><input type="radio" name="t1q3" value="b"> Outcome; Input</label><br>
-                <label><input type="radio" name="t1q3" value="c"> Process; Person</label>
+            <div class="question-block" data-q="3">
+                <span class="question">3. Entrepreneurship is defined as the:</span>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> Outcome of a business</label><br>
+                    <label><input type="radio" name="q3" value="b"> Individual owner</label><br>
+                    <label><input type="radio" name="q3" value="c"> Process of creating value</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">4. Which type of entrepreneur works within a large, bureaucratic organization? [cite: 573, 576]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q4" value="a"> Individual Entrepreneur</label><br>
-                <label><input type="radio" name="t1q4" value="b"> Intrapreneur</label><br>
-                <label><input type="radio" name="t1q4" value="c"> Venture Capitalist</label>
+            <div class="question-block" data-q="4">
+                <span class="question">4. An intrapreneur is someone who:</span>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> Starts a small shop</label><br>
+                    <label><input type="radio" name="q4" value="b"> Operates entrepreneurially within an existing organization</label><br>
+                    <label><input type="radio" name="q4" value="c"> Invests only in stocks</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">5. Entrepreneurship shifts people from being "job seekers" to: [cite: 546]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q5" value="a"> Job creators</label><br>
-                <label><input type="radio" name="t1q5" value="b"> Job avoiders</label><br>
-                <label><input type="radio" name="t1q5" value="c"> Government employees</label>
+            <div class="question-block" data-q="5">
+                <span class="question">5. Moving from "job seeker" to "job creator" is a result of:</span>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> Entrepreneurial mindset</label><br>
+                    <label><input type="radio" name="q5" value="b"> Getting a degree</label><br>
+                    <label><input type="radio" name="q5" value="c"> Government policy only</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">6. What is the core formula for Entrepreneurship mentioned in the module? [cite: 991]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q6" value="a"> Planning + Finance</label><br>
-                <label><input type="radio" name="t1q6" value="b"> Creativity + Innovation</label><br>
-                <label><input type="radio" name="t1q6" value="c"> Risk + Capital</label>
+            <div class="question-block" data-q="6">
+                <span class="question">6. Which formula represents Entrepreneurship?</span>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> Management + Labor</label><br>
+                    <label><input type="radio" name="q6" value="b"> Creativity + Innovation</label><br>
+                    <label><input type="radio" name="q6" value="c"> Profit - Loss</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">7. An "entrepreneurial organization" is one that: [cite: 582]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q7" value="a"> Only has one boss</label><br>
-                <label><input type="radio" name="t1q7" value="b"> Avoids all risk</label><br>
-                <label><input type="radio" name="t1q7" value="c"> Creates an environment where all members can contribute to the entrepreneurial function</label>
+            <div class="question-block" data-q="7">
+                <span class="question">7. In the 17th Century, entrepreneurs were typically:</span>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> Bankers</label><br>
+                    <label><input type="radio" name="q7" value="b"> Government contractors with fixed-price agreements</label><br>
+                    <label><input type="radio" name="q7" value="c"> Internet bloggers</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">8. In the 17th Century, an entrepreneur was often someone who: [cite: 521]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q8" value="a"> Provided capital only</label><br>
-                <label><input type="radio" name="t1q8" value="b"> Signed a fixed-price contract with the government</label><br>
-                <label><input type="radio" name="t1q8" value="c"> Was a young professional</label>
+            <div class="question-block" data-q="8">
+                <span class="question">8. Which is a key component of wealth creation?</span>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> Knowledge</label><br>
+                    <label><input type="radio" name="q8" value="b"> Passive income only</label><br>
+                    <label><input type="radio" name="q8" value="c"> Inherited land only</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">9. Which of the following is NOT a step in the innovation process? [cite: 963]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q9" value="a"> Analytical planning</label><br>
-                <label><input type="radio" name="t1q9" value="b"> Resource organization</label><br>
-                <label><input type="radio" name="t1q9" value="c"> Avoiding all market feedback</label>
+            <div class="question-block" data-q="9">
+                <span class="question">9. Innovation involves:</span>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> Thinking of ideas only</label><br>
+                    <label><input type="radio" name="q9" value="b"> Doing new things and applying creative solutions</label><br>
+                    <label><input type="radio" name="q9" value="c"> Following old traditions</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">10. Wealth includes money, knowledge, and: [cite: 792]</span>
-            <div class="options">
-                <label><input type="radio" name="t1q10" value="a"> Assets</label><br>
-                <label><input type="radio" name="t1q10" value="b"> Debts</label><br>
-                <label><input type="radio" name="t1q10" value="c"> Luck</label>
+            <div class="question-block" data-q="10">
+                <span class="question">10. An entrepreneurial venture creates:</span>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> New Value</label><br>
+                    <label><input type="radio" name="q10" value="b"> Boredom</label><br>
+                    <label><input type="radio" name="q10" value="c"> Temporary jobs only</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <button type="button" onclick="checkTest('form1', 'res1', {t1q1:'a', t1q2:'b', t1q3:'c', t1q4:'b', t1q5:'a', t1q6:'b', t1q7:'c', t1q8:'b', t1q9:'c', t1q10:'a'})">Submit Test 1</button>
+            <button type="button" onclick="runTest('test1', {q1:'a', q2:'b', q3:'c', q4:'b', q5:'a', q6:'b', q7:'b', q8:'a', q9:'b', q10:'a'})">Submit Test 1</button>
         </form>
-        <p id="res1" class="result"></p>
+        <div id="test1Score" class="score-display"></div>
     </div>
 
-    <div class="test-container" id="test2">
-        <h3>Chapter 1: Self-Check Test 2 (Competencies & Creativity)</h3>
-        <form id="form2">
-            <span class="question">1. In SMART goals, what does the "R" stand for? [cite: 687, 694]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q1" value="a"> Rapid</label><br>
-                <label><input type="radio" name="t2q1" value="b"> Relevant</label><br>
-                <label><input type="radio" name="t2q1" value="c"> Rigid</label>
+    <div class="test-container" id="test2Container">
+        <h3>Chapter 1: Self-Check Test 2</h3>
+        <form id="test2">
+            <div class="question-block" data-q="1">
+                <span class="question">1. In SMART goal setting, 'M' stands for:</span>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> Money</label><br>
+                    <label><input type="radio" name="q1" value="b"> Measurable</label><br>
+                    <label><input type="radio" name="q1" value="c"> Motivation</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">2. Which quality involves being undeterred by obstacles or difficulties? [cite: 633, 647]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q2" value="a"> Persevering</label><br>
-                <label><input type="radio" name="t2q2" value="b"> Information-seeking</label><br>
-                <label><input type="radio" name="t2q2" value="c"> Goal setting</label>
+            <div class="question-block" data-q="2">
+                <span class="question">2. Persevering entrepreneurs are those who:</span>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> Give up quickly</label><br>
+                    <label><input type="radio" name="q2" value="b"> Are undeterred by obstacles</label><br>
+                    <label><input type="radio" name="q2" value="c"> Wait for others to lead</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">3. "Thinking new things" refers to ______, while "Doing new things" refers to ______. </span>
-            <div class="options">
-                <label><input type="radio" name="t2q3" value="a"> Innovation; Creativity</label><br>
-                <label><input type="radio" name="t2q3" value="b"> Creativity; Innovation</label><br>
-                <label><input type="radio" name="t2q3" value="c"> Management; Leadership</label>
+            <div class="question-block" data-q="3">
+                <span class="question">3. Thinking new things is ______, while doing new things is ______.</span>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> Innovation; Creativity</label><br>
+                    <label><input type="radio" name="q3" value="b"> Creativity; Innovation</label><br>
+                    <label><input type="radio" name="q3" value="c"> Logic; Emotion</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">4. Which of these is a "People Management Skill"? [cite: 746, 764]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q4" value="a"> Financial tracking</label><br>
-                <label><input type="radio" name="t2q4" value="b"> Delegation</label><br>
-                <label><input type="radio" name="t2q4" value="c"> Technical repair</label>
+            <div class="question-block" data-q="4">
+                <span class="question">4. Which is a People Management Skill?</span>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> Accounting</label><br>
+                    <label><input type="radio" name="q4" value="b"> Coding</label><br>
+                    <label><input type="radio" name="q4" value="c"> Delegation</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">5. The "Aha! Experience" occurs during which step of the creative process? [cite: 938, 939]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q5" value="a"> Immersion</label><br>
-                <label><input type="radio" name="t2q5" value="b"> Incubation</label><br>
-                <label><input type="radio" name="t2q5" value="c"> Insight</label>
+            <div class="question-block" data-q="5">
+                <span class="question">5. The 'Insight' stage of creativity is often called the:</span>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> Boredom phase</label><br>
+                    <label><input type="radio" name="q5" value="b"> Aha! Experience</label><br>
+                    <label><input type="radio" name="q5" value="c"> Planning stage</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">6. Which type of innovation is defined as the replication of an existing product or process? [cite: 961]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q6" value="a"> Invention</label><br>
-                <label><input type="radio" name="t2q6" value="b"> Synthesis</label><br>
-                <label><input type="radio" name="t2q6" value="c"> Duplication</label>
+            <div class="question-block" data-q="6">
+                <span class="question">6. Replicating an existing product or process is called:</span>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> Duplication</label><br>
+                    <label><input type="radio" name="q6" value="b"> Invention</label><br>
+                    <label><input type="radio" name="q6" value="c"> Synthesis</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">7. Successful entrepreneurs rely on ______ rather than guesswork. [cite: 678]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q7" value="a"> Luck</label><br>
-                <label><input type="radio" name="t2q7" value="b"> Information-seeking</label><br>
-                <label><input type="radio" name="t2q7" value="c"> Public opinion</label>
+            <div class="question-block" data-q="7">
+                <span class="question">7. Entrepreneurs reduce risk through:</span>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> Guessing</label><br>
+                    <label><input type="radio" name="q7" value="b"> Information seeking</label><br>
+                    <label><input type="radio" name="q7" value="c"> Gambling</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">8. Which environmental factor is considered "Internal"? [cite: 884, 886]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q8" value="a"> Political instability</label><br>
-                <label><input type="radio" name="t2q8" value="b"> Human Resources</label><br>
-                <label><input type="radio" name="t2q8" value="c"> Legal structure</label>
+            <div class="question-block" data-q="8">
+                <span class="question">8. Human resources are part of the ______ environment.</span>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> External</label><br>
+                    <label><input type="radio" name="q8" value="b"> Internal</label><br>
+                    <label><input type="radio" name="q8" value="c"> Political</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">9. "Stakeholders" in an entrepreneurial venture include: [cite: 797, 798]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q9" value="a"> Only the owners</label><br>
-                <label><input type="radio" name="t2q9" value="b"> Only the government</label><br>
-                <label><input type="radio" name="t2q9" value="c"> Employees, investors, suppliers, and customers</label>
+            <div class="question-block" data-q="9">
+                <span class="question">9. Which group includes employees, customers, and suppliers?</span>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> Competitors only</label><br>
+                    <label><input type="radio" name="q9" value="b"> Bystanders</label><br>
+                    <label><input type="radio" name="q9" value="c"> Stakeholders</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <span class="question">10. Which of the following is a barrier to creativity? [cite: 942, 952]</span>
-            <div class="options">
-                <label><input type="radio" name="t2q10" value="a"> Tolerance of ambiguity</label><br>
-                <label><input type="radio" name="t2q10" value="b"> Fearing mistakes and failure</label><br>
-                <label><input type="radio" name="t2q10" value="c"> Being flexible</label>
+            <div class="question-block" data-q="10">
+                <span class="question">10. A common barrier to creativity is:</span>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> Flexibility</label><br>
+                    <label><input type="radio" name="q10" value="b"> Fearing mistakes</label><br>
+                    <label><input type="radio" name="q10" value="c"> Ambiguity tolerance</label>
+                </div>
+                <div class="feedback"></div>
             </div>
 
-            <button type="button" onclick="checkTest('form2', 'res2', {t2q1:'b', t2q2:'a', t2q3:'b', t2q4:'b', t2q5:'c', t2q6:'c', t2q7:'b', t2q8:'b', t2q9:'c', t2q10:'b'})">Submit Test 2</button>
+            <button type="button" onclick="runTest('test2', {q1:'b', q2:'b', q3:'b', q4:'c', q5:'b', q6:'a', q7:'b', q8:'b', q9:'c', q10:'b'})">Submit Test 2</button>
         </form>
-        <p id="res2" class="result"></p>
+        <div id="test2Score" class="score-display"></div>
     </div>
 </section>
 
@@ -228,23 +296,38 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 </footer>
 
 <script>
-function checkTest(formId, resultId, answers) {
+function runTest(formId, answers) {
     let score = 0;
-    const total = Object.keys(answers).length;
-    for (let q in answers) {
-        const selected = document.querySelector(`#${formId} input[name="${q}"]:checked`);
-        if (selected && selected.value === answers[q]) {
-            score++;
+    const form = document.getElementById(formId);
+    const questions = form.querySelectorAll('.question-block');
+
+    questions.forEach(block => {
+        const qNum = block.getAttribute('data-q');
+        const selected = form.querySelector(`input[name="q${qNum}"]:checked`);
+        const feedback = block.querySelector('.feedback');
+        const correctAnswer = answers[`q${qNum}`];
+
+        feedback.style.display = 'block';
+        
+        if (selected) {
+            if (selected.value === correctAnswer) {
+                score++;
+                feedback.textContent = "✓ Correct!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = `✗ Wrong. The correct answer was (${correctAnswer.toUpperCase()}).`;
+                feedback.style.color = "red";
+            }
+        } else {
+            feedback.textContent = `! Not answered. Correct answer: (${correctAnswer.toUpperCase()}).`;
+            feedback.style.color = "orange";
         }
-    }
-    const resultElement = document.getElementById(resultId);
-    resultElement.textContent = `Result: You scored ${score} out of ${total}.`;
-    if(score === total) {
-        resultElement.style.color = "green";
-        resultElement.textContent += " Excellent work!";
-    } else {
-        resultElement.style.color = "#d9534f";
-    }
+    });
+
+    const scoreDiv = document.getElementById(formId + 'Score');
+    scoreDiv.style.display = 'block';
+    scoreDiv.textContent = `Final Score: ${score} / ${Object.keys(answers).length}`;
+    window.scrollTo({ top: scoreDiv.offsetTop - 100, behavior: 'smooth' });
 }
 </script>
 
