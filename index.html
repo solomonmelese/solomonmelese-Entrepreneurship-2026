@@ -33,10 +33,13 @@ button:hover { background:#005bb5; }
 .forum-item { border-bottom: 1px solid #f0f0f0; padding: 10px 0; font-style: italic; }
 
 /* Download Section */
-.download-card { background: #f0f7ff; border: 1px solid #b3d7ff; padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-.download-card a { background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; }
+.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.download-card { background: #f0f7ff; border: 1px solid #b3d7ff; padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9em; }
+.download-card a { background: #28a745; color: white; padding: 5px 10px; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
 footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
+
+@media (max-width: 600px) { .download-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 
@@ -49,7 +52,7 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 
 <nav>
     <ul>
-        <li><a onclick="showPage('home')">Description & Resources</a></li>
+        <li><a onclick="showPage('home')">Home & Resources</a></li>
         <li><a onclick="showPage('assessments')">Self-Check & Forum</a></li>
     </ul>
 </nav>
@@ -57,20 +60,29 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 <main>
 
 <div id="home" class="content-section active">
-    <section id="description">
+    <section>
         <h2>Course Description</h2>
         <p>This teaching material covers the nature of entrepreneurship, business planning, formation, and marketing to foster self-employment mindsets.</p>
     </section>
 
-    <section id="resources">
-        <h2>Learning Resources</h2>
-        <div class="download-card">
-            <span>Chapter 1 Presentation (PPTX)</span>
-            <a href="Chapter1_Entrepreneurship.pptx" download>Download PPT</a>
+    <section>
+        <h2>Core Module</h2>
+        <div class="download-card" style="background: #fff0f0; border-color: #ffcccc;">
+            <strong>Full Entrepreneurship Module (PDF)</strong>
+            <a href="Entrepreneurship_Module.pdf" download style="background: #dc3545;">Download PDF</a>
         </div>
-        <div class="download-card">
-            <span>Full Entrepreneurship Module (PDF)</span>
-            <a href="Entrepreneurship_Module.pdf" download>Download PDF</a>
+    </section>
+
+    <section>
+        <h2>Chapter Presentations (PPTX)</h2>
+        <div class="download-grid">
+            <div class="download-card"><span>Ch 1: Nature of Entrepreneurship</span><a href="Chapter1_Entrepreneurship.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 2: Business Planning</span><a href="Chapter2_BusinessPlanning.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 3: Business Formation</span><a href="Chapter3_BusinessFormation.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 4: Product Development</span><a href="Chapter4_ProductDevelopment.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 5: Marketing</span><a href="Chapter5_Marketing.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 6: Business Financing</span><a href="Chapter6_Financing.pptx" download>Download</a></div>
+            <div class="download-card"><span>Ch 7: Managing Growth</span><a href="Chapter7_ManagingGrowth.pptx" download>Download</a></div>
         </div>
     </section>
 </div>
@@ -80,165 +92,65 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
         <h2>Self-Check Test: Chapter 1</h2>
         <div class="test-container">
             <form id="chapter1Test">
-                <div class="question-block" data-q="1">
-                    <span class="question">1. The word 'entrepreneur' originates from which French word?</span>
-                    <label><input type="radio" name="q1" value="a"> Entreprender</label><br>
-                    <label><input type="radio" name="q1" value="b"> Enterprise</label><br>
-                    <label><input type="radio" name="q1" value="c"> Employer</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="1"><span class="question">1. The word 'entrepreneur' originates from which French word?</span>
+                    <label><input type="radio" name="q1" value="a"> Entreprender</label><br><label><input type="radio" name="q1" value="b"> Enterprise</label><br><label><input type="radio" name="q1" value="c"> Employer</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="2">
-                    <span class="question">2. In the 18th Century, who developed the theory of the entrepreneur as a risk taker?</span>
-                    <label><input type="radio" name="q2" value="a"> Joseph Schumpeter</label><br>
-                    <label><input type="radio" name="q2" value="b"> Richard Cantillon</label><br>
-                    <label><input type="radio" name="q2" value="c"> Jacobs</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="2"><span class="question">2. In the 18th Century, who developed the theory of the entrepreneur as a risk taker?</span>
+                    <label><input type="radio" name="q2" value="a"> Joseph Schumpeter</label><br><label><input type="radio" name="q2" value="b"> Richard Cantillon</label><br><label><input type="radio" name="q2" value="c"> Adam Smith</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="3">
-                    <span class="question">3. What is the core formula for Entrepreneurship?</span>
-                    <label><input type="radio" name="q3" value="a"> Labor + Capital</label><br>
-                    <label><input type="radio" name="q3" value="b"> Creativity + Innovation</label><br>
-                    <label><input type="radio" name="q3" value="c"> Risk + Reward</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="3"><span class="question">3. What is the core formula for Entrepreneurship?</span>
+                    <label><input type="radio" name="q3" value="a"> Labor + Capital</label><br><label><input type="radio" name="q3" value="b"> Creativity + Innovation</label><br><label><input type="radio" name="q3" value="c"> Risk + Reward</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="4">
-                    <span class="question">4. A person doing entrepreneurial work within a large organization is a/an:</span>
-                    <label><input type="radio" name="q4" value="a"> Individual Entrepreneur</label><br>
-                    <label><input type="radio" name="q4" value="b"> Intrapreneur</label><br>
-                    <label><input type="radio" name="q4" value="c"> Manager</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="4"><span class="question">4. A person doing entrepreneurial work within a large organization is a/an:</span>
+                    <label><input type="radio" name="q4" value="a"> Individual Entrepreneur</label><br><label><input type="radio" name="q4" value="b"> Intrapreneur</label><br><label><input type="radio" name="q4" value="c"> Manager</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="5">
-                    <span class="question">5. The 'Aha! Experience' occurs during which stage of the creative process?</span>
-                    <label><input type="radio" name="q5" value="a"> Immersion</label><br>
-                    <label><input type="radio" name="q5" value="b"> Incubation</label><br>
-                    <label><input type="radio" name="q5" value="c"> Insight</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="5"><span class="question">5. The 'Aha! Experience' occurs during which stage?</span>
+                    <label><input type="radio" name="q5" value="a"> Immersion</label><br><label><input type="radio" name="q5" value="b"> Incubation</label><br><label><input type="radio" name="q5" value="c"> Insight</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="6">
-                    <span class="question">6. Innovation is the ability to apply creative solutions to enhance people's lives or to:</span>
-                    <label><input type="radio" name="q6" value="a"> Increase debt</label><br>
-                    <label><input type="radio" name="q6" value="b"> Enrich society</label><br>
-                    <label><input type="radio" name="q6" value="c"> Avoid failure</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="6"><span class="question">6. Innovation is the ability to apply creative solutions to enhance lives or to:</span>
+                    <label><input type="radio" name="q6" value="a"> Increase debt</label><br><label><input type="radio" name="q6" value="b"> Enrich society</label><br><label><input type="radio" name="q6" value="c"> Avoid failure</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="7">
-                    <span class="question">7. SMART goals must be Specific, Measurable, Attainable, Relevant, and:</span>
-                    <label><input type="radio" name="q7" value="a"> Time-bound</label><br>
-                    <label><input type="radio" name="q7" value="b"> Technical</label><br>
-                    <label><input type="radio" name="q7" value="c"> Tough</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="7"><span class="question">7. SMART goals must be Specific, Measurable, Attainable, Relevant, and:</span>
+                    <label><input type="radio" name="q7" value="a"> Time-bound</label><br><label><input type="radio" name="q7" value="b"> Technical</label><br><label><input type="radio" name="q7" value="c"> Tough</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="8">
-                    <span class="question">8. Which environment includes variables such as age, sex, and education profile?</span>
-                    <label><input type="radio" name="q8" value="a"> Economic</label><br>
-                    <label><input type="radio" name="q8" value="b"> Demographic</label><br>
-                    <label><input type="radio" name="q8" value="c"> Legal</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="8"><span class="question">8. Which environment includes age, sex, and education profile?</span>
+                    <label><input type="radio" name="q8" value="a"> Economic</label><br><label><input type="radio" name="q8" value="b"> Demographic</label><br><label><input type="radio" name="q8" value="c"> Legal</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="9">
-                    <span class="question">9. 'Money and anything that money can buy' is the definition of:</span>
-                    <label><input type="radio" name="q9" value="a"> Wealth</label><br>
-                    <label><input type="radio" name="q9" value="b"> Profit</label><br>
-                    <label><input type="radio" name="q9" value="c"> Venture</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="9"><span class="question">9. 'Money and anything that money can buy' is the definition of:</span>
+                    <label><input type="radio" name="q9" value="a"> Wealth</label><br><label><input type="radio" name="q9" value="b"> Profit</label><br><label><input type="radio" name="q9" value="c"> Venture</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="10">
-                    <span class="question">10. Stakeholders who provide the necessary money to start the venture are:</span>
-                    <label><input type="radio" name="q10" value="a"> Suppliers</label><br>
-                    <label><input type="radio" name="q10" value="b"> Investors</label><br>
-                    <label><input type="radio" name="q10" value="c"> Competitors</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="10"><span class="question">10. Stakeholders who provide money to start the venture are:</span>
+                    <label><input type="radio" name="q10" value="a"> Suppliers</label><br><label><input type="radio" name="q10" value="b"> Investors</label><br><label><input type="radio" name="q10" value="c"> Competitors</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="11">
-                    <span class="question">11. Being ________ means producing results with little wasted effort.</span>
-                    <label><input type="radio" name="q11" value="a"> Efficient</label><br>
-                    <label><input type="radio" name="q11" value="b"> Quality-oriented</label><br>
-                    <label><input type="radio" name="q11" value="c"> Risk-averse</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="11"><span class="question">11. Being ________ means producing results with little wasted effort.</span>
+                    <label><input type="radio" name="q11" value="a"> Efficient</label><br><label><input type="radio" name="q11" value="b"> Quality-oriented</label><br><label><input type="radio" name="q11" value="c"> Risk-averse</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="12">
-                    <span class="question">12. The entrepreneur is the person, whereas entrepreneurship is the:</span>
-                    <label><input type="radio" name="q12" value="a"> Adjective</label><br>
-                    <label><input type="radio" name="q12" value="b"> Process</label><br>
-                    <label><input type="radio" name="q12" value="c"> Outcome</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="12"><span class="question">12. The entrepreneur is the person, whereas entrepreneurship is the:</span>
+                    <label><input type="radio" name="q12" value="a"> Adjective</label><br><label><input type="radio" name="q12" value="b"> Process</label><br><label><input type="radio" name="q12" value="c"> Outcome</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="13">
-                    <span class="question">13. Which skill involves making the best use of everyone's contribution?</span>
-                    <label><input type="radio" name="q13" value="a"> Technical Skill</label><br>
-                    <label><input type="radio" name="q13" value="b"> Delegation Skill</label><br>
-                    <label><input type="radio" name="q13" value="c"> Financial Skill</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="13"><span class="question">13. Which skill involves making the best use of everyone's contribution?</span>
+                    <label><input type="radio" name="q13" value="a"> Technical Skill</label><br><label><input type="radio" name="q13" value="b"> Delegation Skill</label><br><label><input type="radio" name="q13" value="c"> Financial Skill</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="14">
-                    <span class="question">14. Which is a barrier to creativity?</span>
-                    <label><input type="radio" name="q14" value="a"> Fearing mistakes and failure</label><br>
-                    <label><input type="radio" name="q14" value="b"> Tolerance of ambiguity</label><br>
-                    <label><input type="radio" name="q14" value="c"> Adaptability</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="14"><span class="question">14. Which is a barrier to creativity?</span>
+                    <label><input type="radio" name="q14" value="a"> Fearing mistakes and failure</label><br><label><input type="radio" name="q14" value="b"> Tolerance of ambiguity</label><br><label><input type="radio" name="q14" value="c"> Adaptability</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="15">
-                    <span class="question">15. The internal environment includes which of the following?</span>
-                    <label><input type="radio" name="q15" value="a"> Human Resources</label><br>
-                    <label><input type="radio" name="q15" value="b"> Legal laws</label><br>
-                    <label><input type="radio" name="q15" value="c"> Politics</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="15"><span class="question">15. The internal environment includes which of the following?</span>
+                    <label><input type="radio" name="q15" value="a"> Human Resources</label><br><label><input type="radio" name="q15" value="b"> Legal laws</label><br><label><input type="radio" name="q15" value="c"> Politics</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="16">
-                    <span class="question">16. In the middle 20th century, entrepreneurs were seen as:</span>
-                    <label><input type="radio" name="q16" value="a"> Simple managers</label><br>
-                    <label><input type="radio" name="q16" value="b"> Inventors and innovators</label><br>
-                    <label><input type="radio" name="q16" value="c"> Job seekers</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="16"><span class="question">16. In the middle 20th century, entrepreneurs were seen as:</span>
+                    <label><input type="radio" name="q16" value="a"> Simple managers</label><br><label><input type="radio" name="q16" value="b"> Inventors and innovators</label><br><label><input type="radio" name="q16" value="c"> Job seekers</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="17">
-                    <span class="question">17. Which innovation involves creating a new use for an existing product?</span>
-                    <label><input type="radio" name="q17" value="a"> Extension</label><br>
-                    <label><input type="radio" name="q17" value="b"> Invention</label><br>
-                    <label><input type="radio" name="q17" value="c"> Duplication</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="17"><span class="question">17. Which innovation involves creating a new use for an existing product?</span>
+                    <label><input type="radio" name="q17" value="a"> Extension</label><br><label><input type="radio" name="q17" value="b"> Invention</label><br><label><input type="radio" name="q17" value="c"> Duplication</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="18">
-                    <span class="question">18. Self-confidence means entrepreneurs believe in:</span>
-                    <label><input type="radio" name="q18" value="a"> Their own ability to achieve goals</label><br>
-                    <label><input type="radio" name="q18" value="b"> Pure luck</label><br>
-                    <label><input type="radio" name="q18" value="c"> Avoiding all decisions</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="18"><span class="question">18. Self-confidence means entrepreneurs believe in:</span>
+                    <label><input type="radio" name="q18" value="a"> Their own ability to achieve goals</label><br><label><input type="radio" name="q18" value="b"> Pure luck</label><br><label><input type="radio" name="q18" value="c"> Avoiding all decisions</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="19">
-                    <span class="question">19. The external environment component concerning cultural values is:</span>
-                    <label><input type="radio" name="q19" value="a"> Economic</label><br>
-                    <label><input type="radio" name="q19" value="b"> Socio-Cultural</label><br>
-                    <label><input type="radio" name="q19" value="c"> Technical</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="19"><span class="question">19. The external environment component concerning cultural values is:</span>
+                    <label><input type="radio" name="q19" value="a"> Economic</label><br><label><input type="radio" name="q19" value="b"> Socio-Cultural</label><br><label><input type="radio" name="q19" value="c"> Technical</label><div class="feedback"></div></div>
 
-                <div class="question-block" data-q="20">
-                    <span class="question">20. In the 17th Century, the entrepreneur was viewed as someone who:</span>
-                    <label><input type="radio" name="q20" value="a"> Signed contractual agreements with the government</label><br>
-                    <label><input type="radio" name="q20" value="b"> Discovered technical inventions</label><br>
-                    <label><input type="radio" name="q20" value="c"> Provided labor for wages</label>
-                    <div class="feedback"></div>
-                </div>
+                <div class="question-block" data-q="20"><span class="question">20. In the 17th Century, the entrepreneur was viewed as someone who:</span>
+                    <label><input type="radio" name="q20" value="a"> Signed contractual agreements with the government</label><br><label><input type="radio" name="q20" value="b"> Discovered technical inventions</label><br><label><input type="radio" name="q20" value="c"> Provided labor for wages</label><div class="feedback"></div></div>
 
                 <button type="button" onclick="runTest('chapter1Test', {
                     q1:'a', q2:'b', q3:'b', q4:'b', q5:'c', 
