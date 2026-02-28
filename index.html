@@ -6,24 +6,25 @@
 <title>Entrepreneurship Course 2026</title>
 
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f8; color:#333; }
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f8; color:#333; line-height: 1.6; }
 header { background:#0073e6; color:white; padding:20px; text-align:center; }
 header h1 { margin:0; font-size:2em; }
-nav { background:#005bb5; }
+nav { background:#005bb5; position: sticky; top: 0; z-index: 1000; }
 nav ul { list-style:none; display:flex; justify-content:center; padding:10px; flex-wrap:wrap; margin:0; }
 nav ul li { margin:0 15px; }
 nav ul li a { color:white; text-decoration:none; font-weight:bold; }
 nav ul li a:hover { text-decoration:underline; }
-main { max-width:900px; margin:20px auto; padding:0 20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+main { max-width:900px; margin:20px auto; padding:20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
 section { padding:20px 0; border-bottom:1px solid #ddd; }
 section:last-child { border-bottom:none; }
-h2 { color:#0073e6; }
-ul li { margin-bottom:8px; }
-form label { display:block; margin:5px 0; }
-button { margin-top:10px; padding:8px 16px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; }
+h2 { color:#0073e6; border-left: 5px solid #0073e6; padding-left: 10px; }
+.test-container { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
+.question { font-weight: bold; margin-top: 15px; display: block; }
+.options { margin-bottom: 10px; }
+button { margin-top:10px; padding:10px 20px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; font-size: 16px; }
 button:hover { background:#005bb5; }
+.result { font-weight: bold; margin-top: 10px; color: #d9534f; }
 footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
-.resources li { margin-bottom:10px; }
 </style>
 </head>
 
@@ -31,14 +32,15 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 
 <header>
     <h1>Entrepreneurship Course 2026</h1>
-    <p>Instructor: Solomon Melese | Assistant Professor of Management, Department of Management, College of Business and Economics, Debre Berhan University</p>
+    <p>Instructor: Solomon Melese | Assistant Professor of Management</p>
+    <p>College of Business and Economics, Debre Berhan University</p>
 </header>
 
 <nav>
     <ul>
         <li><a href="#description">Description</a></li>
         <li><a href="#resources">Modules</a></li>
-        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#self-check">Self-Check Tests</a></li>
     </ul>
 </nav>
 
@@ -47,7 +49,7 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 <section id="description">
     <h2>Course Description</h2>
     <p>
-        Entrepreneurship, now a common course for all Ethiopian freshmen, aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics.
+        Entrepreneurship aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics. [cite: 546]
     </p>
 </section>
 
@@ -56,48 +58,193 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
     <ul class="resources">
         <li><a href="modules/Entrepreneurship_Module.pdf" target="_blank">Full Module (PDF)</a></li>
         <li><a href="modules/Chapter1_Entrepreneurship.pptx" target="_blank">Chapter 1: The Nature of Entrepreneurship</a></li>
-        <li><a href="modules/Chapter2_BusinessPlanning.pptx" target="_blank">Chapter 2: Business Planning</a></li>
-        <li><a href="modules/Chapter3_BusinessFormation.pptx" target="_blank">Chapter 3: Business Formation</a></li>
-        <li><a href="modules/Chapter4_ProductDevelopment.pptx" target="_blank">Chapter 4: Product/Service Development</a></li>
-        <li><a href="modules/Chapter5_Marketing.pptx" target="_blank">Chapter 5: Marketing</a></li>
-        <li><a href="modules/Chapter6_Financing.pptx" target="_blank">Chapter 6: Business Financing</a></li>
-        <li><a href="modules/Chapter7_ManagingGrowth.pptx" target="_blank">Chapter 7: Managing Growth and Transition</a></li>
-    </ul>
+        </ul>
 </section>
 
-<section id="quiz">
-    <h2>Sample Quiz</h2>
-    <form id="quizForm">
-        <p>1. Feasibility analysis is conducted to:</p>
-        <label><input type="radio" name="q1" value="a"> Prepare financial statements</label>
-        <label><input type="radio" name="q1" value="b"> Determine if a business idea is viable</label>
-        <label><input type="radio" name="q1" value="c"> Hire employees</label>
+<section id="self-check">
+    <h2>Self-Check Tests</h2>
+    
+    <div class="test-container" id="test1">
+        <h3>Chapter 1: Self-Check Test 1 (Fundamentals)</h3>
+        <form id="form1">
+            <span class="question">1. The word 'entrepreneur' originates from which French word? [cite: 500]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q1" value="a"> Entreprender</label><br>
+                <label><input type="radio" name="t1q1" value="b"> Entreprise</label><br>
+                <label><input type="radio" name="t1q1" value="c"> Entrepreneurship</label>
+            </div>
 
-        <p>2. The first step in opportunity recognition is:</p>
-        <label><input type="radio" name="q2" value="a"> Idea generation</label>
-        <label><input type="radio" name="q2" value="b"> Business planning</label>
-        <label><input type="radio" name="q2" value="c"> Market launch</label>
+            <span class="question">2. Who developed the first theory of the entrepreneur as a "risk taker" in the 18th Century? [cite: 523, 524]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q2" value="a"> Joseph Schumpeter</label><br>
+                <label><input type="radio" name="t1q2" value="b"> Richard Cantillon</label><br>
+                <label><input type="radio" name="t1q2" value="c"> Jane Jacobs</label>
+            </div>
 
-        <button type="button" onclick="checkQuiz()">Submit</button>
-    </form>
-    <p id="quizResult"></p>
+            <span class="question">3. According to the text, entrepreneurship is the ______ and the entrepreneur is the ______. [cite: 567]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q3" value="a"> Person; Process</label><br>
+                <label><input type="radio" name="t1q3" value="b"> Outcome; Input</label><br>
+                <label><input type="radio" name="t1q3" value="c"> Process; Person</label>
+            </div>
+
+            <span class="question">4. Which type of entrepreneur works within a large, bureaucratic organization? [cite: 573, 576]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q4" value="a"> Individual Entrepreneur</label><br>
+                <label><input type="radio" name="t1q4" value="b"> Intrapreneur</label><br>
+                <label><input type="radio" name="t1q4" value="c"> Venture Capitalist</label>
+            </div>
+
+            <span class="question">5. Entrepreneurship shifts people from being "job seekers" to: [cite: 546]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q5" value="a"> Job creators</label><br>
+                <label><input type="radio" name="t1q5" value="b"> Job avoiders</label><br>
+                <label><input type="radio" name="t1q5" value="c"> Government employees</label>
+            </div>
+
+            <span class="question">6. What is the core formula for Entrepreneurship mentioned in the module? [cite: 991]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q6" value="a"> Planning + Finance</label><br>
+                <label><input type="radio" name="t1q6" value="b"> Creativity + Innovation</label><br>
+                <label><input type="radio" name="t1q6" value="c"> Risk + Capital</label>
+            </div>
+
+            <span class="question">7. An "entrepreneurial organization" is one that: [cite: 582]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q7" value="a"> Only has one boss</label><br>
+                <label><input type="radio" name="t1q7" value="b"> Avoids all risk</label><br>
+                <label><input type="radio" name="t1q7" value="c"> Creates an environment where all members can contribute to the entrepreneurial function</label>
+            </div>
+
+            <span class="question">8. In the 17th Century, an entrepreneur was often someone who: [cite: 521]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q8" value="a"> Provided capital only</label><br>
+                <label><input type="radio" name="t1q8" value="b"> Signed a fixed-price contract with the government</label><br>
+                <label><input type="radio" name="t1q8" value="c"> Was a young professional</label>
+            </div>
+
+            <span class="question">9. Which of the following is NOT a step in the innovation process? [cite: 963]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q9" value="a"> Analytical planning</label><br>
+                <label><input type="radio" name="t1q9" value="b"> Resource organization</label><br>
+                <label><input type="radio" name="t1q9" value="c"> Avoiding all market feedback</label>
+            </div>
+
+            <span class="question">10. Wealth includes money, knowledge, and: [cite: 792]</span>
+            <div class="options">
+                <label><input type="radio" name="t1q10" value="a"> Assets</label><br>
+                <label><input type="radio" name="t1q10" value="b"> Debts</label><br>
+                <label><input type="radio" name="t1q10" value="c"> Luck</label>
+            </div>
+
+            <button type="button" onclick="checkTest('form1', 'res1', {t1q1:'a', t1q2:'b', t1q3:'c', t1q4:'b', t1q5:'a', t1q6:'b', t1q7:'c', t1q8:'b', t1q9:'c', t1q10:'a'})">Submit Test 1</button>
+        </form>
+        <p id="res1" class="result"></p>
+    </div>
+
+    <div class="test-container" id="test2">
+        <h3>Chapter 1: Self-Check Test 2 (Competencies & Creativity)</h3>
+        <form id="form2">
+            <span class="question">1. In SMART goals, what does the "R" stand for? [cite: 687, 694]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q1" value="a"> Rapid</label><br>
+                <label><input type="radio" name="t2q1" value="b"> Relevant</label><br>
+                <label><input type="radio" name="t2q1" value="c"> Rigid</label>
+            </div>
+
+            <span class="question">2. Which quality involves being undeterred by obstacles or difficulties? [cite: 633, 647]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q2" value="a"> Persevering</label><br>
+                <label><input type="radio" name="t2q2" value="b"> Information-seeking</label><br>
+                <label><input type="radio" name="t2q2" value="c"> Goal setting</label>
+            </div>
+
+            <span class="question">3. "Thinking new things" refers to ______, while "Doing new things" refers to ______. </span>
+            <div class="options">
+                <label><input type="radio" name="t2q3" value="a"> Innovation; Creativity</label><br>
+                <label><input type="radio" name="t2q3" value="b"> Creativity; Innovation</label><br>
+                <label><input type="radio" name="t2q3" value="c"> Management; Leadership</label>
+            </div>
+
+            <span class="question">4. Which of these is a "People Management Skill"? [cite: 746, 764]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q4" value="a"> Financial tracking</label><br>
+                <label><input type="radio" name="t2q4" value="b"> Delegation</label><br>
+                <label><input type="radio" name="t2q4" value="c"> Technical repair</label>
+            </div>
+
+            <span class="question">5. The "Aha! Experience" occurs during which step of the creative process? [cite: 938, 939]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q5" value="a"> Immersion</label><br>
+                <label><input type="radio" name="t2q5" value="b"> Incubation</label><br>
+                <label><input type="radio" name="t2q5" value="c"> Insight</label>
+            </div>
+
+            <span class="question">6. Which type of innovation is defined as the replication of an existing product or process? [cite: 961]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q6" value="a"> Invention</label><br>
+                <label><input type="radio" name="t2q6" value="b"> Synthesis</label><br>
+                <label><input type="radio" name="t2q6" value="c"> Duplication</label>
+            </div>
+
+            <span class="question">7. Successful entrepreneurs rely on ______ rather than guesswork. [cite: 678]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q7" value="a"> Luck</label><br>
+                <label><input type="radio" name="t2q7" value="b"> Information-seeking</label><br>
+                <label><input type="radio" name="t2q7" value="c"> Public opinion</label>
+            </div>
+
+            <span class="question">8. Which environmental factor is considered "Internal"? [cite: 884, 886]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q8" value="a"> Political instability</label><br>
+                <label><input type="radio" name="t2q8" value="b"> Human Resources</label><br>
+                <label><input type="radio" name="t2q8" value="c"> Legal structure</label>
+            </div>
+
+            <span class="question">9. "Stakeholders" in an entrepreneurial venture include: [cite: 797, 798]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q9" value="a"> Only the owners</label><br>
+                <label><input type="radio" name="t2q9" value="b"> Only the government</label><br>
+                <label><input type="radio" name="t2q9" value="c"> Employees, investors, suppliers, and customers</label>
+            </div>
+
+            <span class="question">10. Which of the following is a barrier to creativity? [cite: 942, 952]</span>
+            <div class="options">
+                <label><input type="radio" name="t2q10" value="a"> Tolerance of ambiguity</label><br>
+                <label><input type="radio" name="t2q10" value="b"> Fearing mistakes and failure</label><br>
+                <label><input type="radio" name="t2q10" value="c"> Being flexible</label>
+            </div>
+
+            <button type="button" onclick="checkTest('form2', 'res2', {t2q1:'b', t2q2:'a', t2q3:'b', t2q4:'b', t2q5:'c', t2q6:'c', t2q7:'b', t2q8:'b', t2q9:'c', t2q10:'b'})">Submit Test 2</button>
+        </form>
+        <p id="res2" class="result"></p>
+    </div>
 </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Entrepreneurship Course | All Rights Reserved</p>
+    <p>&copy; 2026 Entrepreneurship Course | Solomon Melese</p>
 </footer>
 
 <script>
-function checkQuiz() {
-    const answers = {q1: 'b', q2: 'a'};
+function checkTest(formId, resultId, answers) {
     let score = 0;
+    const total = Object.keys(answers).length;
     for (let q in answers) {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === answers[q]) score++;
+        const selected = document.querySelector(`#${formId} input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+            score++;
+        }
     }
-    document.getElementById('quizResult').textContent = `You scored ${score} out of ${Object.keys(answers).length}`;
+    const resultElement = document.getElementById(resultId);
+    resultElement.textContent = `Result: You scored ${score} out of ${total}.`;
+    if(score === total) {
+        resultElement.style.color = "green";
+        resultElement.textContent += " Excellent work!";
+    } else {
+        resultElement.style.color = "#d9534f";
+    }
 }
 </script>
 
