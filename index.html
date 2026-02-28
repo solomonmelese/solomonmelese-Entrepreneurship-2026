@@ -22,17 +22,22 @@ main { max-width:900px; margin:20px auto; padding:20px; background:white; border
 
 h2 { color:#0073e6; border-left: 5px solid #0073e6; padding-left: 10px; }
 .test-container { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
-.question-block { margin-bottom: 20px; padding: 10px; border-radius: 5px; }
+.question-block { margin-bottom: 20px; padding: 10px; border-radius: 5px; border-bottom: 1px solid #ddd; }
 .question { font-weight: bold; display: block; margin-bottom: 8px; }
 .feedback { font-size: 0.9em; margin-top: 5px; font-weight: bold; display: none; }
 button { margin-top:10px; padding:10px 20px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; font-size: 16px; }
 button:hover { background:#005bb5; }
-.score-display { font-size: 1.2em; font-weight: bold; margin-top: 15px; padding: 15px; background: #e7f3ff; border-radius: 5px; display: none; border: 1px solid #b3d7ff; }
+.score-display { font-size: 1.2em; font-weight: bold; margin-top: 15px; padding: 15px; background: #e7f3ff; border-radius: 5px; display: none; border: 1px solid #b3d7ff; position: sticky; bottom: 20px; }
 
 /* Forum Styles */
 .forum-box { background: #fffbe6; padding: 20px; border: 1px solid #ffe58f; border-radius: 8px; margin-top: 20px; }
 .forum-item { border-bottom: 1px solid #f0f0f0; padding: 10px 0; }
 .forum-item:last-child { border-bottom: none; }
+
+/* Download Styles */
+.download-list { list-style: none; padding: 0; }
+.download-list li { background: #fff; border: 1px solid #0073e6; margin-bottom: 10px; padding: 15px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
+.download-btn { background: #28a745; color: white; padding: 5px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
 footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
 </style>
@@ -63,10 +68,20 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
     </section>
 
     <section id="resources">
-        <h2>Modules</h2>
-        <ul>
-            <li><a href="#">Chapter 1: The Nature of Entrepreneurship</a></li>
-            <li><a href="#">Chapter 2: Business Planning</a></li>
+        <h2>Learning Materials (Downloadable)</h2>
+        <ul class="download-list">
+            <li>
+                <span>Chapter 1 Module (PDF)</span>
+                <a href="CHAPTER_1.pdf" class="download-btn" download>Download PDF</a>
+            </li>
+            <li>
+                <span>Chapter 1 Presentation (PPT)</span>
+                <a href="Chapter1_Lecture.pptx" class="download-btn" download>Download PPT</a>
+            </li>
+            <li>
+                <span>Chapter 2 Presentation (PPT)</span>
+                <a href="Chapter2_Lecture.pptx" class="download-btn" download>Download PPT</a>
+            </li>
         </ul>
     </section>
 </div>
@@ -76,29 +91,174 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
         <h2>Self-Check Tests</h2>
         
         <div class="test-container">
-            <h3>Chapter 1: Knowledge Check</h3>
+            <h3>Chapter 1: Knowledge Check (20 Questions)</h3>
             <form id="test1">
                 <div class="question-block" data-q="1">
-                    <span class="question">1. Which French word is the origin of 'Entrepreneur'?</span>
-                    <div class="options">
-                        <label><input type="radio" name="q1" value="a"> Entreprender</label><br>
-                        <label><input type="radio" name="q1" value="b"> Enterprise</label><br>
-                        <label><input type="radio" name="q1" value="c"> Employer</label>
-                    </div>
+                    <span class="question">1. The word 'entrepreneur' originates from which French word?</span>
+                    <label><input type="radio" name="q1" value="a"> Entreprender</label><br>
+                    <label><input type="radio" name="q1" value="b"> Enterprise</label><br>
+                    <label><input type="radio" name="q1" value="c"> Employer</label>
                     <div class="feedback"></div>
                 </div>
 
                 <div class="question-block" data-q="2">
                     <span class="question">2. What does 'Entreprender' literally mean in a commercial context?</span>
-                    <div class="options">
-                        <label><input type="radio" name="q2" value="a"> To avoid risk</label><br>
-                        <label><input type="radio" name="q2" value="b"> To undertake a project</label><br>
-                        <label><input type="radio" name="q2" value="c"> To work for wages</label>
-                    </div>
+                    <label><input type="radio" name="q2" value="a"> To avoid risk</label><br>
+                    <label><input type="radio" name="q2" value="b"> To undertake a project</label><br>
+                    <label><input type="radio" name="q2" value="c"> To work for wages</label>
                     <div class="feedback"></div>
                 </div>
 
-                <button type="button" onclick="runTest('test1', {q1:'a', q2:'b'})">Submit Test</button>
+                <div class="question-block" data-q="3">
+                    <span class="question">3. Who developed the first theory of the entrepreneur as a risk taker in the 18th Century?</span>
+                    <label><input type="radio" name="q3" value="a"> Joseph Schumpeter</label><br>
+                    <label><input type="radio" name="q3" value="b"> Richard Cantillon</label><br>
+                    <label><input type="radio" name="q3" value="c"> Jacobs</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="4">
+                    <span class="question">4. Entrepreneurship is defined as the result of:</span>
+                    <label><input type="radio" name="q4" value="a"> Labor + Capital</label><br>
+                    <label><input type="radio" name="q4" value="b"> Creativity + Innovation</label><br>
+                    <label><input type="radio" name="q4" value="c"> Risk + Luck</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="5">
+                    <span class="question">5. Which of these is a person doing entrepreneurial work within a large organization?</span>
+                    <label><input type="radio" name="q5" value="a"> Individual Entrepreneur</label><br>
+                    <label><input type="radio" name="q5" value="b"> Intrapreneur</label><br>
+                    <label><input type="radio" name="q5" value="c"> Venture Capitalist</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="6">
+                    <span class="question">6. The 'Aha! Experience' occurs in which step of the creative process?</span>
+                    <label><input type="radio" name="q6" value="a"> Immersion</label><br>
+                    <label><input type="radio" name="q6" value="b"> Incubation</label><br>
+                    <label><input type="radio" name="q6" value="c"> Insight</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="7">
+                    <span class="question">7. What is the ability to apply creative solutions to enhance people's lives?</span>
+                    <label><input type="radio" name="q7" value="a"> Creativity</label><br>
+                    <label><input type="radio" name="q7" value="b"> Innovation</label><br>
+                    <label><input type="radio" name="q7" value="c"> Vision</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="8">
+                    <span class="question">8. SMART goals must be Specific, Measurable, Attainable, Relevant, and:</span>
+                    <label><input type="radio" name="q8" value="a"> Technical</label><br>
+                    <label><input type="radio" name="q8" value="b"> Time-bound</label><br>
+                    <label><input type="radio" name="q8" value="c"> Tough</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="9">
+                    <span class="question">9. Which type of innovation involves the creation of a brand new product?</span>
+                    <label><input type="radio" name="q9" value="a"> Invention</label><br>
+                    <label><input type="radio" name="q9" value="b"> Extension</label><br>
+                    <label><input type="radio" name="q9" value="c"> Duplication</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="10">
+                    <span class="question">10. Factors external to a business that influence its operations are called:</span>
+                    <label><input type="radio" name="q10" value="a"> Internal Environment</label><br>
+                    <label><input type="radio" name="q10" value="b"> Business Environment</label><br>
+                    <label><input type="radio" name="q10" value="c"> Production Management</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="11">
+                    <span class="question">11. Which stakeholder provides the necessary money to start the venture?</span>
+                    <label><input type="radio" name="q11" value="a"> Supplier</label><br>
+                    <label><input type="radio" name="q11" value="b"> Investor</label><br>
+                    <label><input type="radio" name="q11" value="c"> Local Community</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="12">
+                    <span class="question">12. Being ________ means producing results with little wasted effort.</span>
+                    <label><input type="radio" name="q12" value="a"> Efficient</label><br>
+                    <label><input type="radio" name="q12" value="b"> Quality-oriented</label><br>
+                    <label><input type="radio" name="q12" value="c"> Risk-averse</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="13">
+                    <span class="question">13. Demographic environment includes variables like age, sex, and:</span>
+                    <label><input type="radio" name="q13" value="a"> Laws</label><br>
+                    <label><input type="radio" name="q13" value="b"> Education profile</label><br>
+                    <label><input type="radio" name="q13" value="c"> Raw materials</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="14">
+                    <span class="question">14. Which is a barrier to creativity?</span>
+                    <label><input type="radio" name="q14" value="a"> Tolerance of ambiguity</label><br>
+                    <label><input type="radio" name="q14" value="b"> Fearing mistakes and failure</label><br>
+                    <label><input type="radio" name="q14" value="c"> Generating many alternatives</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="15">
+                    <span class="question">15. The ability to inspire people to work for the success of the venture is:</span>
+                    <label><input type="radio" name="q15" value="a"> Financial Skill</label><br>
+                    <label><input type="radio" name="q15" value="b"> Leadership Skill</label><br>
+                    <label><input type="radio" name="q15" value="c"> Planning Skill</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="16">
+                    <span class="question">16. Entrepreneurship shifts people from being job seekers to:</span>
+                    <label><input type="radio" name="q16" value="a"> Job creators</label><br>
+                    <label><input type="radio" name="q16" value="b"> Investors</label><br>
+                    <label><input type="radio" name="q16" value="c"> Government employees</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="17">
+                    <span class="question">17. Which economic perspective views the entrepreneur as organizing for personal gain?</span>
+                    <label><input type="radio" name="q17" value="a"> 17th Century</label><br>
+                    <label><input type="radio" name="q17" value="b"> Late 19th and early 20th Century</label><br>
+                    <label><input type="radio" name="q17" value="c"> Middle 20th Century</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="18">
+                    <span class="question">18. Internal environment components include human resources, finance, and:</span>
+                    <label><input type="radio" name="q18" value="a"> Politics</label><br>
+                    <label><input type="radio" name="q18" value="b"> Raw materials</label><br>
+                    <label><input type="radio" name="q18" value="c"> Legal laws</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="19">
+                    <span class="question">19. The process of putting things together in unexpected ways is:</span>
+                    <label><input type="radio" name="q19" value="a"> Verification</label><br>
+                    <label><input type="radio" name="q19" value="b"> Recombining</label><br>
+                    <label><input type="radio" name="q19" value="c"> Commercialization</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <div class="question-block" data-q="20">
+                    <span class="question">20. What is 'Money and anything that money can buy' in entrepreneurship?</span>
+                    <label><input type="radio" name="q20" value="a"> Profit</label><br>
+                    <label><input type="radio" name="q20" value="b"> Wealth</label><br>
+                    <label><input type="radio" name="q20" value="c"> Innovation</label>
+                    <div class="feedback"></div>
+                </div>
+
+                <button type="button" onclick="runTest('test1', {
+                    q1:'a', q2:'b', q3:'b', q4:'b', q5:'b', 
+                    q6:'c', q7:'b', q8:'b', q9:'a', q10:'b',
+                    q11:'b', q12:'a', q13:'b', q14:'b', q15:'b',
+                    q16:'a', q17:'b', q18:'b', q19:'b', q20:'b'
+                })">Submit All 20 Questions</button>
             </form>
             <div id="test1Score" class="score-display"></div>
         </div>
@@ -109,7 +269,6 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
         <div class="forum-box">
             <p><strong>Topic: Understanding the Entrepreneurial Mindset</strong></p>
             <p>Answer the following questions to participate in the discussion:</p>
-            
             <div class="forum-item">1. How does "undertaking" a project differ from simply completing a task assigned by a boss?</div>
             <div class="forum-item">2. Why is "creativity" considered the ability to look at problems in new ways?</div>
             <div class="forum-item">3. How does "innovation" turn a creative idea into something that enriches society?</div>
@@ -126,19 +285,14 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 </footer>
 
 <script>
-// Navigation Script
 function showPage(pageId) {
-    // Hide all sections
     document.querySelectorAll('.content-section').forEach(section => {
         section.classList.remove('active');
     });
-    // Show selected section
     document.getElementById(pageId).classList.add('active');
-    // Scroll to top
     window.scrollTo(0,0);
 }
 
-// Test Script
 function runTest(formId, answers) {
     let score = 0;
     const form = document.getElementById(formId);
@@ -169,7 +323,7 @@ function runTest(formId, answers) {
 
     const scoreDiv = document.getElementById(formId + 'Score');
     scoreDiv.style.display = 'block';
-    scoreDiv.textContent = "Your Final Score: " + score + " / " + Object.keys(answers).length;
+    scoreDiv.textContent = "Your Final Score: " + score + " / 20";
 }
 </script>
 
