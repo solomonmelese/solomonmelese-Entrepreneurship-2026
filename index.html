@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrepreneurship Course 2026</title>
+
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f6f8; color:#333; }
+header { background:#0073e6; color:white; padding:20px; text-align:center; }
+header h1 { margin:0; font-size:2em; }
+nav { background:#005bb5; }
+nav ul { list-style:none; display:flex; justify-content:center; padding:10px; flex-wrap:wrap; margin:0; }
+nav ul li { margin:0 15px; }
+nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+nav ul li a:hover { text-decoration:underline; }
+main { max-width:900px; margin:20px auto; padding:0 20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+section { padding:20px 0; border-bottom:1px solid #ddd; }
+section:last-child { border-bottom:none; }
+h2 { color:#0073e6; }
+ul li { margin-bottom:8px; }
+form label { display:block; margin:5px 0; }
+button { margin-top:10px; padding:8px 16px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; }
+button:hover { background:#005bb5; }
+footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
+.resources li { margin-bottom:10px; }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Entrepreneurship Course 2026</h1>
+    <p>Instructor: Solomon Melese | Assistant Professor of Management, Department of Management, College of Business and Economics, Debre Berhan University</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#resources">Modules</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section id="description">
+    <h2>Course Description</h2>
+    <p>
+        Entrepreneurship, now a common course for all Ethiopian freshmen, aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics.
+    </p>
+</section>
+
+<section id="resources">
+    <h2>Modules</h2>
+    <ul class="resources">
+        <li><a href="modules/Entrepreneurship_Module.pdf" target="_blank">Full Module (PDF)</a></li>
+        <li><a href="modules/Chapter1_Entrepreneurship.pptx" target="_blank">Chapter 1: The Nature of Entrepreneurship</a></li>
+        <li><a href="modules/Chapter2_BusinessPlanning.pptx" target="_blank">Chapter 2: Business Planning</a></li>
+        <li><a href="modules/Chapter3_BusinessFormation.pptx" target="_blank">Chapter 3: Business Formation</a></li>
+        <li><a href="modules/Chapter4_ProductDevelopment.pptx" target="_blank">Chapter 4: Product/Service Development</a></li>
+        <li><a href="modules/Chapter5_Marketing.pptx" target="_blank">Chapter 5: Marketing</a></li>
+        <li><a href="modules/Chapter6_Financing.pptx" target="_blank">Chapter 6: Business Financing</a></li>
+        <li><a href="modules/Chapter7_ManagingGrowth.pptx" target="_blank">Chapter 7: Managing Growth and Transition</a></li>
+    </ul>
+</section>
+
+<section id="quiz">
+    <h2>Sample Quiz</h2>
+    <form id="quizForm">
+        <p>1. Feasibility analysis is conducted to:</p>
+        <label><input type="radio" name="q1" value="a"> Prepare financial statements</label>
+        <label><input type="radio" name="q1" value="b"> Determine if a business idea is viable</label>
+        <label><input type="radio" name="q1" value="c"> Hire employees</label>
+
+        <p>2. The first step in opportunity recognition is:</p>
+        <label><input type="radio" name="q2" value="a"> Idea generation</label>
+        <label><input type="radio" name="q2" value="b"> Business planning</label>
+        <label><input type="radio" name="q2" value="c"> Market launch</label>
+
+        <button type="button" onclick="checkQuiz()">Submit</button>
+    </form>
+    <p id="quizResult"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Entrepreneurship Course | All Rights Reserved</p>
+</footer>
+
+<script>
+function checkQuiz() {
+    const answers = {q1: 'b', q2: 'a'};
+    let score = 0;
+    for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) score++;
+    }
+    document.getElementById('quizResult').textContent = `You scored ${score} out of ${Object.keys(answers).length}`;
+}
+</script>
+
+</body>
+</html>
