@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrepreneurship Course 2026</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; background:#f0f2f5; color:#333; line-height: 1.6; }
-        header { background:#0056b3; color:white; padding:30px 20px; text-align:center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav { background:#004494; position: sticky; top: 0; z-index: 1000; }
-        nav ul { list-style:none; display:flex; justify-content:center; padding:12px; margin:0; }
-        nav ul li { margin:0 15px; }
-        nav ul li a { color:white; text-decoration:none; font-weight:bold; cursor: pointer; transition: 0.3s; }
-        nav ul li a:hover { color: #ffd700; }
-        main { max-width:1000px; margin:20px auto; padding:25px; background:white; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
-        .content-section { display: none; }
-        .active { display: block; }
-        h2 { color:#0056b3; border-left: 6px solid #0056b3; padding-left: 15px; margin-top: 30px; }
-        
-        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 20px; }
-        .download-card { background: #eef6ff; border: 1px solid #cce0ff; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s; }
-        .download-card:hover { transform: translateY(-3px); }
-        .download-card a { background: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrepreneurship Course 2026</title>
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; background:#f0f2f5; color:#333; line-height:1.6; }
+header { background:#0056b3; color:white; padding:30px 20px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+nav { background:#004494; position:sticky; top:0; z-index:1000;}
+nav ul { list-style:none; display:flex; justify-content:center; padding:12px; margin:0;}
+nav ul li { margin:0 15px;}
+nav ul li a { color:white; text-decoration:none; font-weight:bold; cursor:pointer; transition:0.3s;}
+nav ul li a:hover { color:#ffd700;}
+main { max-width:1000px; margin:20px auto; padding:25px; background:white; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.content-section { display:none;}
+.active { display:block;}
+h2 { color:#0056b3; border-left:6px solid #0056b3; padding-left:15px; margin-top:30px;}
 
-        .test-container { background: #ffffff; padding: 25px; border-radius: 10px; border: 1px solid #ddd; margin-top: 20px; }
-        .question-block { margin-bottom: 25px; padding: 15px; background: #fafafa; border-radius: 8px; border-left: 5px solid #0056b3; }
-        .question-text { font-weight: bold; display: block; margin-bottom: 12px; font-size: 1.1em; }
-        .option { display: block; margin-bottom: 10px; cursor: pointer; padding: 5px; border-radius: 4px; }
-        .option:hover { background: #f0f0f0; }
-        .feedback { font-weight: bold; margin-top: 10px; display: none; }
-        .submit-btn { background: #0056b3; color: white; border: none; padding: 18px; width: 100%; font-size: 1.2em; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .submit-btn:hover { background: #003d7a; }
-        #scoreDisplay { display: none; text-align: center; font-size: 1.6em; padding: 20px; background: #d4edda; color: #155724; border: 2px solid #c3e6cb; border-radius: 8px; margin-top: 25px; }
+.download-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:15px; margin-top:20px;}
+.download-card { background:#eef6ff; border:1px solid #cce0ff; padding:15px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; transition:transform 0.2s;}
+.download-card:hover { transform:translateY(-3px);}
+.download-card a { background:#28a745; color:white; padding:8px 15px; text-decoration:none; border-radius:4px; font-weight:bold; font-size:0.9em;}
 
-        footer { text-align:center; padding:20px; background:#0056b3; color:white; margin-top:50px; }
-    </style>
+.test-container { background:#ffffff; padding:25px; border-radius:10px; border:1px solid #ddd; margin-top:20px; }
+.question-block { margin-bottom:25px; padding:15px; background:#fafafa; border-radius:8px; border-left:5px solid #0056b3; }
+.question-text { font-weight:bold; display:block; margin-bottom:12px; font-size:1.1em; }
+.option { display:block; margin-bottom:10px; cursor:pointer; padding:5px; border-radius:4px; }
+.option:hover { background:#f0f0f0;}
+.feedback { font-weight:bold; margin-top:10px; display:none; }
+.submit-btn { background:#0056b3; color:white; border:none; padding:18px; width:100%; font-size:1.2em; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.3s;}
+.submit-btn:hover { background:#003d7a;}
+#scoreDisplay { display:none; text-align:center; font-size:1.6em; padding:20px; background:#d4edda; color:#155724; border:2px solid #c3e6cb; border-radius:8px; margin-top:25px;}
+footer { text-align:center; padding:20px; background:#0056b3; color:white; margin-top:50px;}
+</style>
 </head>
 <body>
 
@@ -50,131 +49,92 @@
 </nav>
 
 <main>
-    <div id="home" class="content-section active">
-        <section>
-            <h2>Primary Study Material</h2>
-            <div class="download-card" style="background:#fff5f5; border-color:#ffcccc;">
-                <strong>Full Entrepreneurship Module (PDF)</strong>
-                <a href="Entrepreneurship_Module.pdf" download style="background:#dc3545;">Download PDF</a>
-            </div>
+<div id="home" class="content-section active">
+    <section>
+        <h2>Primary Study Material</h2>
+        <div class="download-card" style="background:#fff5f5; border-color:#ffcccc;">
+            <strong>Full Entrepreneurship Module (PDF)</strong>
+            <a href="Entrepreneurship_Module.pdf" download style="background:#dc3545;">Download PDF</a>
+        </div>
 
-            <h3>Chapter Presentations (PPTX)</h3>
-            <div class="download-grid">
-                <div class="download-card"><span>1. Nature of Entrepreneurship</span><a href="Chapter1_Entrepreneurship.pptx" download>Download</a></div>
-                <div class="download-card"><span>2. Business Planning</span><a href="Chapter2_BusinessPlanning.pptx" download>Download</a></div>
-                <div class="download-card"><span>3. Business Formation</span><a href="Chapter3_BusinessFormation.pptx" download>Download</a></div>
-                <div class="download-card"><span>4. Product/Service Development</span><a href="Chapter4_ProductDevelopment.pptx" download>Download</a></div>
-                <div class="download-card"><span>5. Marketing Strategy</span><a href="Chapter5_Marketing.pptx" download>Download</a></div>
-                <div class="download-card"><span>6. Business Financing</span><a href="Chapter6_Financing.pptx" download>Download</a></div>
-                <div class="download-card"><span>7. Managing Growth</span><a href="Chapter7_ManagingGrowth.pptx" download>Download</a></div>
-            </div>
-        </section>
-    </div>
+        <h3>Chapter Presentations (PPTX)</h3>
+        <div class="download-grid">
+            <div class="download-card"><span>1. Nature of Entrepreneurship</span><a href="Chapter1_Entrepreneurship.pptx" download>Download</a></div>
+            <div class="download-card"><span>2. Business Planning</span><a href="Chapter2_BusinessPlanning.pptx" download>Download</a></div>
+            <div class="download-card"><span>3. Business Formation</span><a href="Chapter3_BusinessFormation.pptx" download>Download</a></div>
+            <div class="download-card"><span>4. Product/Service Development</span><a href="Chapter4_ProductDevelopment.pptx" download>Download</a></div>
+            <div class="download-card"><span>5. Marketing Strategy</span><a href="Chapter5_Marketing.pptx" download>Download</a></div>
+            <div class="download-card"><span>6. Business Financing</span><a href="Chapter6_Financing.pptx" download>Download</a></div>
+            <div class="download-card"><span>7. Managing Growth</span><a href="Chapter7_ManagingGrowth.pptx" download>Download</a></div>
+        </div>
+    </section>
+</div>
 
-    <div id="assessments" class="content-section">
-        <section>
-            <h2>Chapter 1 Self-Check Test (20 Questions)</h2>
-            <div class="test-container">
-                <form id="fullQuiz">
-                    <div class="question-block" data-q="1"><span class="question-text">1. The word 'entrepreneur' originates from which French word?</span>
-                        <label class="option"><input type="radio" name="q1" value="a"> Entreprender</label><label class="option"><input type="radio" name="q1" value="b"> Enterprise</label><div class="feedback"></div></div>
-                    
-                    <div class="question-block" data-q="2"><span class="question-text">2. In the 18th Century, Richard Cantillon defined an entrepreneur as a:</span>
-                        <label class="option"><input type="radio" name="q2" value="a"> Fixed-wage worker</label><label class="option"><input type="radio" name="q2" value="b"> Risk taker</label><div class="feedback"></div></div>
+<div id="assessments" class="content-section">
+    <section>
+        <h2>Chapter 1 Self-Check Test (20 Questions)</h2>
+        <div class="test-container">
+            <form id="fullQuiz">
+                
+                <div class="question-block" data-q="1">
+                    <span class="question-text">1. The word 'entrepreneur' originates from which French word?</span>
+                    <label class="option"><input type="radio" name="q1" value="a"> Entreprender</label>
+                    <label class="option"><input type="radio" name="q1" value="b"> Enterprise</label>
+                    <label class="option"><input type="radio" name="q1" value="c"> Entreprise</label>
+                    <label class="option"><input type="radio" name="q1" value="d"> Enterprize</label>
+                    <div class="feedback"></div>
+                </div>
 
-                    <div class="question-block" data-q="3"><span class="question-text">3. Joseph Schumpeter viewed the entrepreneur as an:</span>
-                        <label class="option"><input type="radio" name="q3" value="a"> Innovator</label><label class="option"><input type="radio" name="q3" value="b"> Administrator</label><div class="feedback"></div></div>
+                <div class="question-block" data-q="2">
+                    <span class="question-text">2. In the 18th Century, Richard Cantillon defined an entrepreneur as a:</span>
+                    <label class="option"><input type="radio" name="q2" value="a"> Fixed-wage worker</label>
+                    <label class="option"><input type="radio" name="q2" value="b"> Risk taker</label>
+                    <label class="option"><input type="radio" name="q2" value="c"> Investor</label>
+                    <label class="option"><input type="radio" name="q2" value="d"> Manager</label>
+                    <div class="feedback"></div>
+                </div>
 
-                    <div class="question-block" data-q="4"><span class="question-text">4. What is the core formula for Entrepreneurship?</span>
-                        <label class="option"><input type="radio" name="q4" value="a"> Creativity + Innovation</label><label class="option"><input type="radio" name="q4" value="b"> Strategy + Capital</label><div class="feedback"></div></div>
+               
 
-                    <div class="question-block" data-q="5"><span class="question-text">5. New value created through a project is called:</span>
-                        <label class="option"><input type="radio" name="q5" value="a"> The Entrepreneurial Venture</label><label class="option"><input type="radio" name="q5" value="b"> Corporate Dividends</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="6"><span class="question-text">6. Intrapreneurs are individuals who start businesses:</span>
-                        <label class="option"><input type="radio" name="q6" value="a"> Within a large organization</label><label class="option"><input type="radio" name="q6" value="b"> Completely independently</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="7"><span class="question-text">7. The 'Aha!' moment occurs during which stage?</span>
-                        <label class="option"><input type="radio" name="q7" value="a"> Incubation</label><label class="option"><input type="radio" name="q7" value="b"> Insight</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="8"><span class="question-text">8. Innovation is the ability to apply creative solutions to:</span>
-                        <label class="option"><input type="radio" name="q8" value="a"> Enhance people’s lives</label><label class="option"><input type="radio" name="q8" value="b"> Avoid taking risks</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="9"><span class="question-text">9. Which innovation involves expanding an existing product?</span>
-                        <label class="option"><input type="radio" name="q9" value="a"> Extension</label><label class="option"><input type="radio" name="q9" value="b"> Duplication</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="10"><span class="question-text">10. Combining existing concepts into a new formulation is:</span>
-                        <label class="option"><input type="radio" name="q10" value="a"> Invention</label><label class="option"><input type="radio" name="q10" value="b"> Synthesis</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="11"><span class="question-text">11. 'Self-Confidence' is the belief in one's ability to:</span>
-                        <label class="option"><input type="radio" name="q11" value="a"> Achieve goals</label><label class="option"><input type="radio" name="q11" value="b"> Rely on luck</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="12"><span class="question-text">12. Locus of control means success is determined by:</span>
-                        <label class="option"><input type="radio" name="q12" value="a"> Your own actions</label><label class="option"><input type="radio" name="q12" value="b"> External fate</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="13"><span class="question-text">13. Demographic variables include:</span>
-                        <label class="option"><input type="radio" name="q13" value="a"> Age and Gender</label><label class="option"><input type="radio" name="q13" value="b"> Inflation rates</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="14"><span class="question-text">14. 'Efficient' means producing results with:</span>
-                        <label class="option"><input type="radio" name="q14" value="a"> Minimum wasted effort</label><label class="option"><input type="radio" name="q14" value="b"> Maximum possible cost</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="15"><span class="question-text">15. The 'Incubation' stage involves:</span>
-                        <label class="option"><input type="radio" name="q15" value="a"> Conscious sales planning</label><label class="option"><input type="radio" name="q15" value="b"> Subconscious processing of ideas</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="16"><span class="question-text">16. Economic development role includes:</span>
-                        <label class="option"><input type="radio" name="q16" value="a"> Creating jobs</label><label class="option"><input type="radio" name="q16" value="b"> Stopping competition</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="17"><span class="question-text">17. Creativity is the ability to:</span>
-                        <label class="option"><input type="radio" name="q17" value="a"> Develop new ideas</label><label class="option"><input type="radio" name="q17" value="b"> Repeat old habits</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="18"><span class="question-text">18. A barrier to creativity is:</span>
-                        <label class="option"><input type="radio" name="q18" value="a"> Fear of mistakes</label><label class="option"><input type="radio" name="q18" value="b"> High motivation</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="19"><span class="question-text">19. External factors like political laws are:</span>
-                        <label class="option"><input type="radio" name="q19" value="a"> Fully controllable</label><label class="option"><input type="radio" name="q19" value="b"> Uncontrollable</label><div class="feedback"></div></div>
-
-                    <div class="question-block" data-q="20"><span class="question-text">20. The end product of entrepreneurship is:</span>
-                        <label class="option"><input type="radio" name="q20" value="a"> A new venture</label><label class="option"><input type="radio" name="q20" value="b"> A simple salary</label><div class="feedback"></div></div>
-
-                    <button type="button" class="submit-btn" onclick="checkFullQuiz()">Submit Final Grade</button>
-                </form>
-                <div id="scoreDisplay"></div>
-            </div>
-        </section>
-    </div>
+                <button type="button" class="submit-btn" onclick="checkFullQuiz()">Submit Final Grade</button>
+            </form>
+            <div id="scoreDisplay"></div>
+        </div>
+    </section>
+</div>
 </main>
 
 <footer><p>&copy; 2026 Entrepreneurship Course | Prepared by Solomon Melese, PhD</p></footer>
 
 <script>
-    function showPage(id) {
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        window.scrollTo(0,0);
-    }
+function showPage(id) {
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+}
 
-    function checkFullQuiz() {
-        const key = {
-            q1:'a', q2:'b', q3:'a', q4:'a', q5:'a', q6:'a', q7:'b', q8:'a', q9:'a', q10:'b',
-            q11:'a', q12:'a', q13:'a', q14:'a', q15:'b', q16:'a', q17:'a', q18:'a', q19:'b', q20:'a'
-        };
-        let score = 0;
-        document.querySelectorAll('.question-block').forEach(block => {
-            const qID = block.getAttribute('data-q');
-            const selected = document.querySelector(`input[name="q${qID}"]:checked`);
-            const fb = block.querySelector('.feedback');
-            fb.style.display = 'block';
-            if(selected && selected.value === key['q'+qID]) {
-                score++; fb.textContent = "✓ Correct!"; fb.style.color = "green";
-            } else {
-                fb.textContent = "✗ Incorrect."; fb.style.color = "red";
-            }
-        });
-        const sd = document.getElementById('scoreDisplay');
-        sd.style.display = "block";
-        sd.textContent = "Your Score: " + score + " / 20";
-        window.scrollTo(0, document.body.scrollHeight);
-    }
+function checkFullQuiz() {
+    const key = {
+        q1:'a', q2:'b', q3:'a', q4:'a', q5:'a', q6:'a', q7:'b', q8:'a', q9:'a', q10:'b',
+        q11:'a', q12:'a', q13:'a', q14:'a', q15:'b', q16:'a', q17:'a', q18:'a', q19:'b', q20:'a'
+    };
+    let score = 0;
+    document.querySelectorAll('.question-block').forEach(block => {
+        const qID = block.getAttribute('data-q');
+        const selected = document.querySelector(`input[name="q${qID}"]:checked`);
+        const fb = block.querySelector('.feedback');
+        fb.style.display = 'block';
+        if(selected && selected.value === key['q'+qID]) {
+            score++; fb.textContent = "✓ Correct!"; fb.style.color = "green";
+        } else {
+            fb.textContent = "✗ Incorrect."; fb.style.color = "red";
+        }
+    });
+    const sd = document.getElementById('scoreDisplay');
+    sd.style.display = "block";
+    sd.textContent = "Your Score: " + score + " / 20";
+    window.scrollTo(0, document.body.scrollHeight);
+}
 </script>
 </body>
 </html>
