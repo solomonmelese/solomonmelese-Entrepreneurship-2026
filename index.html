@@ -12,11 +12,14 @@ header h1 { margin:0; font-size:2em; }
 nav { background:#005bb5; position: sticky; top: 0; z-index: 1000; }
 nav ul { list-style:none; display:flex; justify-content:center; padding:10px; flex-wrap:wrap; margin:0; }
 nav ul li { margin:0 15px; }
-nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+nav ul li a { color:white; text-decoration:none; font-weight:bold; cursor: pointer; }
 nav ul li a:hover { text-decoration:underline; }
 main { max-width:900px; margin:20px auto; padding:20px; background:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-section { padding:20px 0; display: none; } /* Hide all sections by default */
-section.active { display: block; } /* Show only active section */
+
+/* Navigation Logic Styles */
+.content-section { display: none; }
+.active { display: block; }
+
 h2 { color:#0073e6; border-left: 5px solid #0073e6; padding-left: 10px; }
 .test-container { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
 .question-block { margin-bottom: 20px; padding: 10px; border-radius: 5px; }
@@ -25,8 +28,12 @@ h2 { color:#0073e6; border-left: 5px solid #0073e6; padding-left: 10px; }
 button { margin-top:10px; padding:10px 20px; background:#0073e6; color:white; border:none; border-radius:4px; cursor:pointer; font-size: 16px; }
 button:hover { background:#005bb5; }
 .score-display { font-size: 1.2em; font-weight: bold; margin-top: 15px; padding: 15px; background: #e7f3ff; border-radius: 5px; display: none; border: 1px solid #b3d7ff; }
-.forum-container { background: #fffbe6; padding: 20px; border: 1px solid #ffe58f; border-radius: 8px; margin-top: 30px; }
-.forum-question { background: white; padding: 10px; margin: 10px 0; border-left: 4px solid #faad14; }
+
+/* Forum Styles */
+.forum-box { background: #fffbe6; padding: 20px; border: 1px solid #ffe58f; border-radius: 8px; margin-top: 20px; }
+.forum-item { border-bottom: 1px solid #f0f0f0; padding: 10px 0; }
+.forum-item:last-child { border-bottom: none; }
+
 footer { text-align:center; padding:15px 0; background:#0073e6; color:white; margin-top:20px; }
 </style>
 </head>
@@ -36,105 +43,81 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 <header>
     <h1>Entrepreneurship Course 2026</h1>
     <p>Instructor: Solomon Melese | Assistant Professor of Management</p>
-    <p>College of Business and Economics, Debre Berhan University</p>
 </header>
 
 <nav>
     <ul>
-        <li><a href="javascript:void(0)" onclick="showSection('description')">Description</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('resources')">Modules</a></li>
-        <li><a href="javascript:void(0)" onclick="showSection('assessments')">Assessments</a></li>
+        <li><a onclick="showPage('home')">Description & Modules</a></li>
+        <li><a onclick="showPage('assessments')">Self-Check & Forum</a></li>
     </ul>
 </nav>
 
 <main>
 
-<section id="description" class="active">
-    <h2>Course Description</h2>
-    <p>
-        Entrepreneurship aims to foster self-employment mindsets and behavioral change. This teaching material covers seven chapters: nature of entrepreneurship, business planning, business formation, product development, marketing, financing, and business ethics.
-    </p>
-</section>
+<div id="home" class="content-section active">
+    <section id="description">
+        <h2>Course Description</h2>
+        <p>
+            Entrepreneurship aims to foster self-employment mindsets and behavioral change. This teaching material covers nature of entrepreneurship, business planning, formation, and marketing.
+        </p>
+    </section>
 
-<section id="resources">
-    <h2>Modules</h2>
-    <ul class="resources">
-        <li><a href="modules/Entrepreneurship_Module.pdf" target="_blank">Full Module (PDF)</a></li>
-        <li><a href="modules/Chapter1_Entrepreneurship.pptx" target="_blank">Chapter 1: The Nature of Entrepreneurship</a></li>
-        <li><a href="modules/Chapter2_BusinessPlanning.pptx" target="_blank">Chapter 2: Business Planning</a></li>
-        <li><a href="modules/Chapter3_BusinessFormation.pptx" target="_blank">Chapter 3: Business Formation</a></li>
-        <li><a href="modules/Chapter4_ProductDevelopment.pptx" target="_blank">Chapter 4: Product/Service Development</a></li>
-        <li><a href="modules/Chapter5_Marketing.pptx" target="_blank">Chapter 5: Marketing</a></li>
-        <li><a href="modules/Chapter6_Financing.pptx" target="_blank">Chapter 6: Business Financing</a></li>
-        <li><a href="modules/Chapter7_ManagingGrowth.pptx" target="_blank">Chapter 7: Managing Growth and Transition</a></li>
-    </ul>
-</section>
+    <section id="resources">
+        <h2>Modules</h2>
+        <ul>
+            <li><a href="#">Chapter 1: The Nature of Entrepreneurship</a></li>
+            <li><a href="#">Chapter 2: Business Planning</a></li>
+        </ul>
+    </section>
+</div>
 
-<section id="assessments">
-    <h2>Chapter 1: Assessments</h2>
-    
-    <div class="test-container">
-        <h3>Self-Check Test 1: Origins & Definitions</h3>
-        <form id="test1">
-            <div class="question-block" data-q="1">
-                <span class="question">1. The term entrepreneur originates from the French word "entreprender," which means:</span>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="a"> To undertake a commercial project</label><br>
-                    <label><input type="radio" name="q1" value="b"> To save money</label><br>
-                    <label><input type="radio" name="q1" value="c"> To avoid risk</label>
+<div id="assessments" class="content-section">
+    <section>
+        <h2>Self-Check Tests</h2>
+        
+        <div class="test-container">
+            <h3>Chapter 1: Knowledge Check</h3>
+            <form id="test1">
+                <div class="question-block" data-q="1">
+                    <span class="question">1. Which French word is the origin of 'Entrepreneur'?</span>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> Entreprender</label><br>
+                        <label><input type="radio" name="q1" value="b"> Enterprise</label><br>
+                        <label><input type="radio" name="q1" value="c"> Employer</label>
+                    </div>
+                    <div class="feedback"></div>
                 </div>
-                <div class="feedback"></div>
-            </div>
-            <div class="question-block" data-q="2">
-                <span class="question">2. Entrepreneurship is defined as the ______ while the entrepreneur is the ______.</span>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="a"> Person; Process</label><br>
-                    <label><input type="radio" name="q2" value="b"> Process; Person</label><br>
-                    <label><input type="radio" name="q2" value="c"> Goal; Outcome</label>
-                </div>
-                <div class="feedback"></div>
-            </div>
-            <button type="button" onclick="runTest('test1', {q1:'a', q2:'b'})">Submit Test 1</button>
-        </form>
-        <div id="test1Score" class="score-display"></div>
-    </div>
 
-    <div class="test-container">
-        <h3>Self-Check Test 2: Innovation & Creativity</h3>
-        <form id="test2">
-            <div class="question-block" data-q="1">
-                <span class="question">1. Which concept refers to the ability to develop new ideas?</span>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="a"> Innovation</label><br>
-                    <label><input type="radio" name="q1" value="b"> Management</label><br>
-                    <label><input type="radio" name="q1" value="c"> Creativity</label>
+                <div class="question-block" data-q="2">
+                    <span class="question">2. What does 'Entreprender' literally mean in a commercial context?</span>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> To avoid risk</label><br>
+                        <label><input type="radio" name="q2" value="b"> To undertake a project</label><br>
+                        <label><input type="radio" name="q2" value="c"> To work for wages</label>
+                    </div>
+                    <div class="feedback"></div>
                 </div>
-                <div class="feedback"></div>
-            </div>
-            <div class="question-block" data-q="2">
-                <span class="question">2. What is the fundamental formula discussed in Chapter 1?</span>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="a"> Capital + Labor = Wealth</label><br>
-                    <label><input type="radio" name="q2" value="b"> Creativity + Innovation = Entrepreneurship</label><br>
-                    <label><input type="radio" name="q2" value="c"> Sales - Costs = Profit</label>
-                </div>
-                <div class="feedback"></div>
-            </div>
-            <button type="button" onclick="runTest('test2', {q1:'c', q2:'b'})">Submit Test 2</button>
-        </form>
-        <div id="test2Score" class="score-display"></div>
-    </div>
 
-    <div class="forum-container">
-        <h3>Discussion Forum: The Entrepreneurial Process</h3>
-        <p>Please post your responses to the following five questions in the forum thread:</p>
-        <div class="forum-question">1. Based on the term <strong>entreprender</strong>, how does "undertaking" a project differ from just managing one?</div>
-        <div class="forum-question">2. Why is <strong>creativity</strong> described as the driving force behind innovation?</div>
-        <div class="forum-question">3. In your own words, explain how the <strong>entrepreneurial process</strong> creates new value.</div>
-        <div class="forum-question">4. Give an example of how an entrepreneur acts as a <strong>job creator</strong> rather than a job seeker.</div>
-        <div class="forum-question">5. How does <strong>innovation</strong> help an entrepreneur exploit a market opportunity?</div>
-    </div>
-</section>
+                <button type="button" onclick="runTest('test1', {q1:'a', q2:'b'})">Submit Test</button>
+            </form>
+            <div id="test1Score" class="score-display"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Discussion Forum</h2>
+        <div class="forum-box">
+            <p><strong>Topic: Understanding the Entrepreneurial Mindset</strong></p>
+            <p>Answer the following questions to participate in the discussion:</p>
+            
+            <div class="forum-item">1. How does "undertaking" a project differ from simply completing a task assigned by a boss?</div>
+            <div class="forum-item">2. Why is "creativity" considered the ability to look at problems in new ways?</div>
+            <div class="forum-item">3. How does "innovation" turn a creative idea into something that enriches society?</div>
+            <div class="forum-item">4. Explain the formula: <em>Entrepreneurship = Creativity + Innovation</em>.</div>
+            <div class="forum-item">5. What is the specific "new value" created during the entrepreneurial process?</div>
+        </div>
+    </section>
+</div>
 
 </main>
 
@@ -143,13 +126,19 @@ footer { text-align:center; padding:15px 0; background:#0073e6; color:white; mar
 </footer>
 
 <script>
-// Function to switch between navigation pages
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(sectionId).classList.add('active');
+// Navigation Script
+function showPage(pageId) {
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    // Show selected section
+    document.getElementById(pageId).classList.add('active');
+    // Scroll to top
+    window.scrollTo(0,0);
 }
 
+// Test Script
 function runTest(formId, answers) {
     let score = 0;
     const form = document.getElementById(formId);
@@ -173,7 +162,7 @@ function runTest(formId, answers) {
                 feedback.style.color = "red";
             }
         } else {
-            feedback.textContent = "! Not answered. Correct answer: " + correctAnswer.toUpperCase();
+            feedback.textContent = "! Please select an answer.";
             feedback.style.color = "orange";
         }
     });
